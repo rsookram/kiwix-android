@@ -23,7 +23,8 @@ object Config {
   // Here is a list of all Android versions with their corresponding API
   // levels: https://apilevels.com/
   const val compileSdk = 33 // SDK version used by Gradle to compile our app.
-  const val minSdk = 24 // Minimum SDK (Minimum Support Device) is 24 (Android 7.0 Nougat).
+  // Fork change: Allow more code to be stripped out
+  const val minSdk = 33 // Minimum SDK (Minimum Support Device) is 33.
   const val targetSdk = 33 // Target SDK (Maximum Support Device) is 33 (Android 13).
 
   val javaVersion = JavaVersion.VERSION_1_8
