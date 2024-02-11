@@ -1994,8 +1994,11 @@ abstract class CoreReaderFragment :
 
   override fun webViewFailedLoading(url: String) {
     if (isAdded) {
-      val error = String.format(getString(R.string.error_article_url_not_found), url)
-      Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
+      // Fork change: `webViewFailedLoading` happens when a resource fails to
+      // load, it doesn't necessarily mean that the whole article failed to
+      // load.
+      // val error = String.format(getString(R.string.error_article_url_not_found), url)
+      // Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
     }
   }
 
