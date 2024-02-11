@@ -1716,6 +1716,8 @@ abstract class CoreReaderFragment :
         createNewTab()
       }
       loadUrlWithCurrentWebview(zimReaderContainer?.urlSuffixToParsableUrl(it))
+      // Fork change: Reset scroll position so that the newly opened item displays from the top.
+      getCurrentWebView()?.scrollY = 0
     }
     requireActivity().consumeObservable<SearchItemToOpen>(TAG_FILE_SEARCHED)
   }
