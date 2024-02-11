@@ -166,14 +166,15 @@ class SearchViewModel @Inject constructor(
   }
 
   private fun saveSearchAndOpenItem(searchListItem: SearchListItem, openInNewTab: Boolean) {
-    _effects.trySend(
-      SaveSearchToRecents(
-        recentSearchDao,
-        searchListItem,
-        zimReaderContainer.id,
-        viewModelScope
-      )
-    ).isSuccess
+    // Fork change: Don't save search queries
+    // _effects.trySend(
+    //   SaveSearchToRecents(
+    //     recentSearchDao,
+    //     searchListItem,
+    //     zimReaderContainer.id,
+    //     viewModelScope
+    //   )
+    // ).isSuccess
     _effects.trySendBlocking(OpenSearchItem(searchListItem, openInNewTab))
   }
 
