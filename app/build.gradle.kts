@@ -42,6 +42,8 @@ android {
   }
   lint {
     checkDependencies = true
+    // Fork change: Faster release builds
+    checkReleaseBuilds = false
   }
 
   buildTypes {

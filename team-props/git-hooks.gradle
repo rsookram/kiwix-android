@@ -27,6 +27,7 @@ task installGitHooks(type: Exec) {
   }
 }
 
-afterEvaluate {
-  tasks['preBuild'].dependsOn installGitHooks
-}
+// Fork change: Don't lint on pre-commit because it's too slow.
+// afterEvaluate {
+//   tasks['preBuild'].dependsOn installGitHooks
+// }
